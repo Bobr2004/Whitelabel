@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VersiFi Insurance — Start a quote</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine:#0e2a23;--pine-2:#0a1f1a;
+  --sand:#e8dfcb;--sand-2:#f4efe3;
+  --brass:#c9a227;--moss:#4f7d64;
+  --dim:#93a89f;--hair:rgba(232,223,203,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:var(--pine);color:var(--sand);font-family:'DM Sans',system-ui,sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.wrap{width:min(1160px,93vw);margin-inline:auto}
+a{color:inherit}
+
+header{position:sticky;top:0;z-index:50;background:rgba(10,31,26,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+nav{display:flex;align-items:center;gap:1.6rem;padding:1rem 0}
+.mark{font-family:Fraunces,serif;font-size:1.42rem;font-weight:300}
+.mark i{font-style:italic;color:var(--brass)}
+nav ul{margin-left:auto;list-style:none;display:flex;gap:1.9rem;padding:0;margin:0;font-size:.84rem;color:var(--dim)}
+nav a{text-decoration:none;transition:.2s}
+nav a:hover{color:var(--sand)}
+.btn{display:inline-block;text-decoration:none;font-size:.83rem;font-weight:500;padding:.66rem 1.25rem;border-radius:2px;transition:.22s;border:0;cursor:pointer;font-family:inherit}
+.btn-b{background:var(--brass);color:var(--pine-2)}
+.btn-b:hover{background:var(--sand)}
+.btn-o{border:1px solid var(--hair);color:var(--sand);background:transparent}
+.btn-o:hover{border-color:var(--brass);color:var(--brass)}
+@media(max-width:880px){nav ul{display:none}}
+
+.top{padding:4.5rem 0 2.6rem;text-align:center;max-width:60ch;margin-inline:auto}
+.kick{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin-bottom:1.4rem}
+h1{font-family:Fraunces,serif;font-weight:300;font-size:clamp(2.2rem,5.4vw,3.9rem);line-height:1.04;letter-spacing:-.02em;margin:0 0 1.1rem}
+h1 i{font-style:italic;color:var(--brass)}
+.top p{color:var(--dim);line-height:1.78;margin:0 auto;max-width:50ch}
+
+.cols{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;padding:1.5rem 0 5rem;align-items:start}
+@media(max-width:900px){.cols{grid-template-columns:1fr;gap:2.2rem}}
+
+.card{border:1px solid var(--hair);border-radius:4px;background:rgba(232,223,203,.035);padding:clamp(1.4rem,3vw,2.2rem)}
+.card>h2{font-family:Fraunces,serif;font-weight:400;font-size:1.3rem;margin:0 0 1.3rem;letter-spacing:-.01em}
+.card>h2 i{font-style:italic;color:var(--brass)}
+.hs-form-frame{min-height:430px}
+.ph{display:flex;align-items:center;gap:.7rem;color:var(--dim);font-size:.86rem;padding:1rem 0}
+.ph b{width:8px;height:8px;border-radius:50%;background:var(--brass);display:inline-block;animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+.nojs{color:var(--brass);font-size:.86rem}
+
+/* If the embed renders inline rather than in an iframe, keep it in the house style. */
+.card .hs-form-field{margin-bottom:1.1rem}
+.card .hs-form-field>label{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:.4rem}
+.card .hs-input:not([type=checkbox]):not([type=radio]){
+  width:100%;padding:.75rem .85rem;font-family:'DM Sans',sans-serif;font-size:.94rem;
+  color:var(--sand);background:rgba(10,31,26,.55);border:1px solid var(--hair);border-radius:2px}
+.card .hs-input:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 2px rgba(201,162,39,.25)}
+.card .hs-button{background:var(--brass);color:var(--pine-2);border:0;border-radius:2px;padding:.8rem 1.6rem;
+  font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:500;cursor:pointer}
+.card .hs-error-msg,.card .hs-error-msgs label{color:#e2a08f;font-size:.8rem;text-transform:none;letter-spacing:0}
+
+.lead{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:1.1rem}
+h2.section{font-family:Fraunces,serif;font-weight:300;font-size:clamp(1.5rem,2.8vw,2rem);line-height:1.14;letter-spacing:-.02em;margin:0 0 1.4rem}
+h2.section i{font-style:italic;color:var(--brass)}
+.rows{border-top:1px solid var(--hair)}
+.row{display:grid;grid-template-columns:1fr auto;gap:1.2rem;padding:.85rem 0;border-bottom:1px solid var(--hair);align-items:baseline}
+.row span{font-size:.94rem}
+.row em{font-style:normal;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+.row em.req{color:var(--moss)}
+.note{margin-top:1.6rem;color:var(--dim);line-height:1.8;font-size:.92rem}
+.steps{margin-top:2.2rem;display:grid;gap:.9rem}
+.step{display:grid;grid-template-columns:1.6rem 1fr;gap:.9rem;align-items:baseline}
+.step b{font-family:Fraunces,serif;font-weight:400;color:var(--brass);font-size:1rem}
+.step p{margin:0;color:var(--dim);font-size:.9rem;line-height:1.7}
+
+footer{border-top:1px solid var(--hair);padding:2.2rem 0 3rem;font-size:.8rem;color:var(--dim)}
+.foot{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap}
+footer a{color:var(--brass);text-decoration:none}
+@media(prefers-reduced-motion:reduce){.ph b{animation:none}}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <div class="mark">VersiFi <i>Insurance</i></div>
+  <ul>
+    <li><a href="/territory">Overview</a></li>
+    <li><a href="/territory#map">Territory</a></li>
+    <li><a href="/territory#panel">Carrier panel</a></li>
+  </ul>
+  <a class="btn btn-b" href="#form">Go to the form</a>
+</nav></div></header>
+
+<main>
+<section class="top wrap">
+  <div class="kick">New submission</div>
+  <h1>Tell us where the <i>property</i> is.</h1>
+  <p>An address and a closing date are enough to open a file. We'll quote every carrier on the panel whose appetite fits the risk, then bring the comparison back to you.</p>
+</section>
+
+<div class="wrap cols">
+  <section class="card" id="form">
+    <h2>Property &amp; <i>contact</i> details</h2>
+    <div class="ph" id="ph"><b></b> Loading the form…</div>
+    <noscript><p class="nojs">This form needs JavaScript. Email Burke@VersiFi-Insurance.com with the property address and closing date instead.</p></noscript>
+    <script src="https://js-eu1.hsforms.net/forms/embed/21143790.js" defer></script>
+    <div class="hs-form-frame" data-region="eu1" data-form-id="cff4409a-e8c1-4155-afcd-59b8ecfd845b" data-portal-id="21143790"></div>
+  </section>
+
+  <aside>
+    <div class="lead">What we'll ask for</div>
+    <h2 class="section">Eleven fields, <i>not all required</i>.</h2>
+    <div class="rows">
+      <div class="row"><span>Property address</span><em class="req">Required</em></div>
+      <div class="row"><span>Loan amount or dwelling minimum</span><em class="req">Required</em></div>
+      <div class="row"><span>Closing date</span><em class="req">Required</em></div>
+      <div class="row"><span>Loan or policy type</span><em class="req">Required</em></div>
+      <div class="row"><span>Insured name — borrower</span><em class="req">Required</em></div>
+      <div class="row"><span>Client name</span><em>Preferred</em></div>
+      <div class="row"><span>Client email address</span><em class="req">Required</em></div>
+      <div class="row"><span>Mailing address &amp; phone</span><em>Preferred</em></div>
+      <div class="row"><span>Date of birth</span><em>If applicable</em></div>
+      <div class="row"><span>Mortgagee clause &amp; loan number</span><em>If financed</em></div>
+      <div class="row"><span>Referral source</span><em>If referred</em></div>
+    </div>
+    <p class="note">Property characteristics — year built, construction, roof — are pulled here rather than requested, so a short submission is still a complete one.</p>
+
+    <div class="steps">
+      <div class="step"><b>1</b><p>You send the address and the closing date.</p></div>
+      <div class="step"><b>2</b><p>Anything missing comes back as one written request.</p></div>
+      <div class="step"><b>3</b><p>Every carrier with appetite for the risk gets quoted.</p></div>
+      <div class="step"><b>4</b><p>Suitable options come back compared, price included.</p></div>
+    </div>
+  </aside>
+</div>
+</main>
+
+<footer><div class="wrap foot">
+  <div class="mark">VersiFi <i>Insurance</i></div>
+  <div><a href="mailto:Burke@VersiFi-Insurance.com">Burke@VersiFi-Insurance.com</a> · +1 512 801 8702</div>
+  <div>© 2026</div>
+</div></footer>
+
+<script>
+(function(){
+  var frame=document.querySelector('.hs-form-frame'), ph=document.getElementById('ph');
+  if(!frame||!ph) return;
+  function check(){ if(frame.children.length){ ph.hidden=true; obs.disconnect(); } }
+  var obs=new MutationObserver(check);
+  obs.observe(frame,{childList:true,subtree:true});
+  check();
+  setTimeout(function(){
+    if(!frame.children.length){
+      ph.innerHTML='The form is taking a moment. You can also email <a href="mailto:Burke@VersiFi-Insurance.com" style="color:var(--brass)">Burke@VersiFi-Insurance.com</a>.';
+    }
+  },9000);
+})();
+</script>
+</body>
+</html>

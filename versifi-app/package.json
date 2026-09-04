@@ -1,0 +1,25 @@
+{
+  "name": "versifi-landing-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Hono app serving three VersiFi Insurance landing page directions with a floating switcher.",
+  "scripts": {
+    "gen": "node scripts/gen.mjs",
+    "dev": "npm run gen && tsx watch dev.ts",
+    "build": "npm run gen && tsc --noEmit",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "hono": "^4.6.14"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

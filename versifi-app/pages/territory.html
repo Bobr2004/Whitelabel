@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VersiFi Insurance — Twenty-one states and counting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine:#0e2a23;
+  --pine-2:#0a1f1a;
+  --sand:#e8dfcb;
+  --sand-2:#f4efe3;
+  --brass:#c9a227;
+  --moss:#4f7d64;
+  --dim:#93a89f;
+  --hair:rgba(232,223,203,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--pine);color:var(--sand);font-family:'DM Sans',system-ui,sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1160px,93vw);margin-inline:auto}
+
+header{position:sticky;top:0;z-index:50;background:rgba(10,31,26,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+nav{display:flex;align-items:center;gap:1.6rem;padding:1rem 0}
+.mark{font-family:Fraunces,serif;font-size:1.42rem;font-weight:300;letter-spacing:.005em}
+.mark i{font-style:italic;color:var(--brass)}
+nav ul{margin-left:auto;list-style:none;display:flex;gap:1.9rem;padding:0;margin:0;font-size:.84rem;color:var(--dim)}
+nav a{text-decoration:none;transition:.2s}
+nav a:hover{color:var(--sand)}
+.btn{display:inline-block;text-decoration:none;font-size:.83rem;font-weight:500;padding:.66rem 1.25rem;border-radius:2px;transition:.22s;letter-spacing:.01em}
+.btn-b{background:var(--brass);color:var(--pine-2)}
+.btn-b:hover{background:var(--sand);color:var(--pine-2)}
+.btn-o{border:1px solid var(--hair);color:var(--sand)}
+.btn-o:hover{border-color:var(--brass);color:var(--brass)}
+@media(max-width:880px){nav ul{display:none}}
+
+/* hero */
+.hero{padding:5rem 0 3rem;text-align:center;max-width:64ch;margin-inline:auto}
+.kick{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin-bottom:1.5rem}
+h1{font-family:Fraunces,serif;font-weight:300;font-size:clamp(2.5rem,6.2vw,4.6rem);line-height:1.03;letter-spacing:-.02em;margin:0 0 1.3rem}
+h1 i{font-style:italic;color:var(--brass)}
+.hero p{color:var(--dim);line-height:1.78;font-size:1.05rem;margin:0 auto 2.2rem;max-width:52ch}
+.acts{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
+
+/* MAP — signature */
+.mapbox{padding:1rem 0 5.5rem}
+.map-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.6rem;border-bottom:1px solid var(--hair);padding-bottom:1rem}
+.map-head .t{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.readout{font-family:Fraunces,serif;font-size:1.6rem;font-weight:300;min-height:1.5em}
+.readout b{color:var(--brass);font-weight:300}
+.tilegrid{display:grid;grid-template-columns:repeat(11,1fr);gap:clamp(3px,.55vw,7px);max-width:820px;margin:0 auto}
+.tile{
+  grid-column:var(--c);grid-row:var(--r);
+  aspect-ratio:1;display:grid;place-items:center;
+  font-size:clamp(.5rem,1.05vw,.74rem);font-weight:500;letter-spacing:.04em;
+  border:1px solid rgba(232,223,203,.12);border-radius:2px;
+  background:rgba(232,223,203,.035);color:rgba(232,223,203,.34);
+  cursor:default;font-family:'DM Sans',sans-serif;padding:0;
+  transition:transform .2s cubic-bezier(.2,.9,.3,1.4),background .25s,color .25s,border-color .25s;
+}
+.tile.lit{
+  background:var(--moss);border-color:var(--moss);color:var(--sand-2);
+  animation:pop .5s cubic-bezier(.2,1.2,.4,1) backwards;
+}
+@keyframes pop{from{transform:scale(.4);opacity:0}}
+.tile.lit:hover,.tile.lit:focus-visible{background:var(--brass);border-color:var(--brass);color:var(--pine-2);transform:scale(1.16);z-index:2}
+.tile:not(.lit):hover{color:rgba(232,223,203,.6)}
+.maplegend{display:flex;gap:1.8rem;justify-content:center;margin-top:1.8rem;font-size:.76rem;color:var(--dim);flex-wrap:wrap}
+.maplegend span{display:flex;align-items:center;gap:.5rem}
+.swatch{width:11px;height:11px;border-radius:2px;display:inline-block}
+.swatch.a{background:var(--moss)}
+.swatch.b{background:rgba(232,223,203,.06);border:1px solid rgba(232,223,203,.2)}
+
+/* sections */
+section{padding:5.5rem 0;border-top:1px solid var(--hair)}
+.two{display:grid;grid-template-columns:.85fr 1.15fr;gap:3.5rem;align-items:start}
+h2{font-family:Fraunces,serif;font-weight:300;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.12;letter-spacing:-.02em;margin:0 0 1rem}
+h2 i{font-style:italic;color:var(--brass)}
+.two .lead{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin-bottom:1rem}
+.two p{color:var(--dim);line-height:1.8;margin:0 0 1.1rem}
+@media(max-width:880px){.two{grid-template-columns:1fr;gap:1.6rem}}
+
+.lines{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:3px;overflow:hidden;margin-top:2rem}
+.lines article{background:var(--pine);padding:1.7rem;transition:background .3s}
+.lines article:hover{background:#12332b}
+.lines h3{margin:0 0 .5rem;font-family:Fraunces,serif;font-weight:500;font-size:1.15rem;letter-spacing:-.01em}
+.lines p{margin:0;color:var(--dim);font-size:.9rem;line-height:1.7}
+@media(max-width:700px){.lines{grid-template-columns:1fr}}
+
+.quote{max-width:44ch;font-family:Fraunces,serif;font-style:italic;font-weight:300;font-size:clamp(1.35rem,2.8vw,2rem);line-height:1.4;color:var(--sand);margin:0}
+.quote+.by{margin-top:1.3rem;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+
+.markets{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.8rem}
+.mk{border:1px solid var(--hair);border-radius:100px;padding:.45rem .95rem;font-size:.82rem;color:var(--dim);transition:.2s}
+.mk:hover{border-color:var(--brass);color:var(--brass)}
+
+.end{text-align:center;padding:6.5rem 0}
+.end p{color:var(--dim);max-width:50ch;margin:0 auto 2.2rem;line-height:1.78}
+footer{border-top:1px solid var(--hair);padding:2.4rem 0 3rem;font-size:.8rem;color:var(--dim)}
+.foot{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap}
+footer a{color:var(--brass);text-decoration:none}
+
+.rv{opacity:0;transform:translateY(22px);transition:.8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.tile.lit{animation:none}}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <div class="mark">VersiFi <i>Insurance</i></div>
+  <ul>
+    <li><a href="#map">Territory</a></li>
+    <li><a href="#work">What we place</a></li>
+    <li><a href="#panel">Carrier panel</a></li>
+  </ul>
+  <a class="btn btn-b" href="#contact">Start a quote</a>
+</nav></div></header>
+
+<main>
+<section class="hero wrap" style="border:0">
+  <div class="kick">Investment property insurance</div>
+  <h1>Your portfolio doesn't stop at the <i>state line</i>.</h1>
+  <p>VersiFi Insurance writes property and casualty for real estate investors across twenty-one states — landlord, builders risk, vacant, and short-term rental — through a carrier panel wide enough that the right form is almost always available.</p>
+  <div class="acts">
+    <a class="btn btn-b" href="#contact">Send property details</a>
+    <a class="btn btn-o" href="#map">See where we write</a>
+  </div>
+</section>
+
+<section class="mapbox wrap" id="map" style="border:0">
+  <div class="map-head">
+    <div class="t">Licensed to write · 21 of 50</div>
+    <div class="readout" id="readout">Hover a lit state</div>
+  </div>
+  <div class="tilegrid" id="grid" role="img" aria-label="Grid map of the United States with the 21 states VersiFi Insurance is licensed in highlighted"></div>
+  <div class="maplegend">
+    <span><i class="swatch a"></i> Licensed today</span>
+    <span><i class="swatch b"></i> Marketing nationwide — ask about your state</span>
+  </div>
+</section>
+
+<section id="work"><div class="wrap two">
+  <div>
+    <div class="lead">What we place</div>
+    <h2 class="rv">Forms that follow the <i>property</i>.</h2>
+  </div>
+  <div>
+    <p class="rv">A property rarely stays in one category. It closes vacant, becomes a jobsite, takes a tenant, then gets listed nightly for a season. Each of those is a different underwriting conversation, and a broker who only sells one form will quietly leave a gap in the middle of the year.</p>
+    <div class="lines">
+      <article class="rv"><h3>Landlord</h3><p>Held rentals, from a single door to a full portfolio.</p></article>
+      <article class="rv"><h3>Builders risk</h3><p>Construction, renovation, and fix-and-flip project exposure.</p></article>
+      <article class="rv"><h3>Vacant</h3><p>Unoccupied property, on a vacant form when that's the correct fit.</p></article>
+      <article class="rv"><h3>Short-term rental</h3><p>Nightly and seasonal use a landlord form won't answer.</p></article>
+      <article class="rv"><h3>Commercial &amp; GL</h3><p>Commercial property, plus standalone general liability.</p></article>
+      <article class="rv"><h3>Homeowners &amp; life</h3><p>Owner-occupied placement including Texas windstorm, and life cover for leveraged investors.</p></article>
+    </div>
+  </div>
+</div></section>
+
+<section id="panel"><div class="wrap two">
+  <div>
+    <div class="lead">Carrier panel</div>
+    <h2 class="rv">No house carrier. <i>Appetite decides.</i></h2>
+  </div>
+  <div>
+    <p class="rv">Every market whose appetite fits the submission gets quoted — then the comparison, price included, goes back to the client. That's more work per file and it's the point of hiring a broker.</p>
+    <div class="markets rv">
+      <span class="mk">TapCo Underwriters</span><span class="mk">US Assure</span><span class="mk">Starfish Specialty</span>
+      <span class="mk">Unitas</span><span class="mk">OSC</span><span class="mk">Steadily</span><span class="mk">Amwins</span>
+      <span class="mk">Tower Hill</span><span class="mk">TWIA</span><span class="mk">Orchid Insurance</span><span class="mk">Vacant Express (GBLI)</span>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap two">
+  <div>
+    <div class="lead">Working style</div>
+    <h2 class="rv">Email in, <i>answers back</i>.</h2>
+  </div>
+  <div>
+    <p class="quote rv">Send an address and a closing date. If something's missing, you'll get one email asking for exactly what's left — not a week of phone calls.</p>
+    <div class="by rv">Burke Fisher · Principal Agent</div>
+    <p class="rv" style="margin-top:2rem">Referral origin is captured at intake and carried through the file, so lender and hard-money partners working under a marketing agreement can reconcile attribution without reconstructing it later.</p>
+  </div>
+</div></section>
+
+<section class="end" id="contact">
+  <div class="wrap">
+    <h2 class="rv" style="font-size:clamp(2rem,5vw,3.4rem)">Tell us where the <i>property</i> is.</h2>
+    <p class="rv">Address and closing date are enough to open a file. We'll take it from there and come back with the panel.</p>
+    <div class="acts rv">
+      <a class="btn btn-b" href="mailto:Burke@VersiFi-Insurance.com?subject=Quote%20request">Burke@VersiFi-Insurance.com</a>
+      <a class="btn btn-o" href="tel:+15128018702">+1 512 801 8702</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap foot">
+  <div class="mark">VersiFi <i>Insurance</i></div>
+  <div>Sister company to <a href="https://www.versificapital.com">VersiFi Capital</a></div>
+  <div>© 2026 · www.VersiFinsurance.com</div>
+</div></footer>
+
+<script>
+const MAP=[
+ ["AK","Alaska",1,1],["ME","Maine",11,1],
+ ["VT","Vermont",10,2],["NH","New Hampshire",11,2],
+ ["WA","Washington",1,3],["ID","Idaho",2,3],["MT","Montana",3,3],["ND","North Dakota",4,3],["MN","Minnesota",5,3],["IL","Illinois",6,3],["WI","Wisconsin",7,3],["MI","Michigan",8,3],["NY","New York",9,3],["RI","Rhode Island",10,3],["MA","Massachusetts",11,3],
+ ["OR","Oregon",1,4],["NV","Nevada",2,4],["WY","Wyoming",3,4],["SD","South Dakota",4,4],["IA","Iowa",5,4],["IN","Indiana",6,4],["OH","Ohio",7,4],["PA","Pennsylvania",8,4],["NJ","New Jersey",9,4],["CT","Connecticut",10,4],
+ ["CA","California",1,5],["UT","Utah",2,5],["CO","Colorado",3,5],["NE","Nebraska",4,5],["MO","Missouri",5,5],["KY","Kentucky",6,5],["WV","West Virginia",7,5],["VA","Virginia",8,5],["MD","Maryland",9,5],["DE","Delaware",10,5],
+ ["AZ","Arizona",2,6],["NM","New Mexico",3,6],["KS","Kansas",4,6],["AR","Arkansas",5,6],["TN","Tennessee",6,6],["NC","North Carolina",7,6],["SC","South Carolina",8,6],["DC","District of Columbia",9,6],
+ ["OK","Oklahoma",4,7],["LA","Louisiana",5,7],["MS","Mississippi",6,7],["AL","Alabama",7,7],["GA","Georgia",8,7],
+ ["HI","Hawaii",1,8],["TX","Texas",4,8],["FL","Florida",9,8]
+];
+const LIT=new Set(["TX","FL","AL","CO","IA","OK","TN","NY","GA","AZ","IL","MD","PA","VA","OH","MI","AR","IN","MO","SC","WI"]);
+const g=document.getElementById('grid');
+const out=document.getElementById('readout');
+let lit=0;
+MAP.forEach(([ab,name,c,r])=>{
+  const el=document.createElement('button');
+  el.type='button';
+  el.className='tile'+(LIT.has(ab)?' lit':'');
+  el.style.setProperty('--c',c); el.style.setProperty('--r',r);
+  el.textContent=ab;
+  if(LIT.has(ab)){el.style.animationDelay=(lit++*32)+'ms'; el.setAttribute('aria-label',name+' — licensed');}
+  else{el.setAttribute('aria-label',name+' — not currently licensed');el.tabIndex=-1}
+  const show=()=>out.innerHTML = LIT.has(ab) ? `${name} <b>— licensed</b>` : `${name} — ask about licensing`;
+  el.addEventListener('mouseenter',show); el.addEventListener('focus',show);
+  g.appendChild(el);
+});
+g.addEventListener('mouseleave',()=>out.textContent='Hover a lit state');
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+</script>
+</body>
+</html>
